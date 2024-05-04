@@ -15,14 +15,14 @@ function App() {
   const resetTimer = () => {
     if (!timeLeft && isSession === "SESSION") {
       console.log(isSession);
-      setTimeLeft(breakTime * 60);
+      setTimeLeft(() => breakTime * 60);
       setIsSession(() => "BREAK");
       // audio.current.currentTime = 0;
       // audio.current.play();
     }
     if (!timeLeft && isSession === "BREAK") {
       console.log(isSession);
-      setTimeLeft(sessionTime * 60);
+      setTimeLeft(() => sessionTime * 60);
       setIsSession(() => "SESSION");
     }
     audio.current.currentTime = 0;
